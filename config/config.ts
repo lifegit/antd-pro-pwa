@@ -75,12 +75,14 @@ export default defineConfig({
   // 在 index.html 的 header 中加载 manifest.json,开启pwa服务
   links: [{ rel: 'manifest', href: `/manifest.json` }],
   chainWebpack: (config: any) => {
-    config.plugin('workbox').use(InjectManifest, [
-      {
-        swSrc: '/src/pwa/service-worker.js',
-        swDest: 'sw.js',
-        exclude: [/\.map$/, /favicon\.ico$/, /^manifest.*\.js?$/],
-      },
-    ]);
-  },
+    // pwa - service-worker
+    if (process.env.NODE_ENV === 'production') {
+      config.plugin('workbox').use(InjectManifest, [
+        {
+          swSrc: '/src/pwa/service-worker.js',
+          swDest: 'sw.js',
+          exclude: [/\.map$/, /favicon\.ico$/, /^manifest.*\.js?$/],
+        },
+      ]);
+    },
 });
