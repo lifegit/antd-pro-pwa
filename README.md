@@ -31,15 +31,18 @@ export default defineConfig({
   
   // 使用 workbox-webpack-plugin
   chainWebpack: (config: any) => {
-    config.plugin('workbox').use(InjectManifest, [
-      {
-        swSrc: '/src/pwa/service-worker.js',
-        swDest: 'sw.js',
-        exclude: [/\.map$/, /favicon\.ico$/, /^manifest.*\.js?$/],
-      },
-    ]);
+    // pwa - service-worker
+    if (process.env.NODE_ENV === 'production') {
+      config.plugin('workbox').use(InjectManifest, [
+        {
+          swSrc: '/src/pwa/service-worker.js',
+          swDest: 'sw.js',
+          exclude: [/\.map$/, /favicon\.ico$/, /^manifest.*\.js?$/],
+        },
+      ]);
+    }
   }
-}
+})
 ```
 4. 修改 `conf/defaultSettings.ts`
 ```base
