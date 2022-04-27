@@ -19,7 +19,7 @@ yarn && yarn start
     - `register-service-worker.tsx` : 注册service-worker服务
     - `service-worker.js` : service-worker服务实体
  
-3. 在 `conf/config.ts` 进行配置:
+3. 在 `config/config.ts` 进行配置:
 ```base
 const { InjectManifest } = require('workbox-webpack-plugin');
 
@@ -44,7 +44,7 @@ export default defineConfig({
   }
 })
 ```
-4. 修改 `conf/defaultSettings.ts`
+4. 修改 `config/defaultSettings.ts`
 ```base
 // 开启pwa服务
 pwa: true
