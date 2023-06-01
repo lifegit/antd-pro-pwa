@@ -9,6 +9,7 @@
 
 1. 安装依赖
 ```base
+yarn add workbox-precaching
 yarn add workbox-webpack-plugin
 yarn add register-service-worker
 yarn && yarn start
