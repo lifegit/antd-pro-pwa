@@ -5,7 +5,7 @@ import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
 // /* eslint-disable no-underscore-dangle */
 // /* globals workbox */
 // workbox.core.setCacheNameDetails({
-//   prefix: 'youxiangjia',
+//   prefix: 'app',
 //   suffix: 'v1',
 // });
 // // Control all opened tabs ASAP

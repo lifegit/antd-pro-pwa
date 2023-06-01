@@ -1,6 +1,6 @@
 {
-  "name": "初唐集团管理系统",
-  "short_name": "初唐集团管理系统",
+  "name": "antd-pro-use-pwa",
+  "short_name": "use pwa example",
   "display": "standalone",
   "start_url": "./?utm_source=homescreen",
   "theme_color": "#002140",

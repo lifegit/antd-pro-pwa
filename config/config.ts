@@ -71,7 +71,7 @@ export default defineConfig({
   webpack5: {},
   exportStatic: {},
   // 编译时将manifest.json拷贝到dist
-  copy: [`/src/pwa/manifest.json`],
+  copy: [`src/pwa/manifest.json`],
   // 在 index.html 的 header 中加载 manifest.json,开启pwa服务
   links: [{ rel: 'manifest', href: `/manifest.json` }],
   chainWebpack: (config: any) => {
@@ -84,5 +84,6 @@ export default defineConfig({
           exclude: [/\.map$/, /favicon\.ico$/, /^manifest.*\.js?$/],
         },
       ]);
-    },
+    }
+  }
 });
